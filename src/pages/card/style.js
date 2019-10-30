@@ -37,39 +37,53 @@ export const CardMenuL = styled.div`
         color: #fefefe;
     }
 `
-export const CardSwiper = styled.div`
-    padding-top: 10%;
-    .swiper-react{
-        height: 500px;
-        border-radius: 10px;
-        background-size:100% 100%;
-        margin: 0 -12px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
+export const Cardlist = styled.div`
+    margin: 30px;
+    height: 496px;
+    transform: scaleX(1);
+    transition: all 0.6s ease;
 `
-export const BackH2 = styled.h2`
-    text-align: center;
-    padding: 35px 0;
-    font-size: 18px;
-    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
-    opacity: 0.9;
+export const CardlistUl = styled.ul`
+    display: flex;
+    height: 100%;
 `
-export const BackDiv = styled.div`
-    display:flex;
-    flex-flow:  row nowrap;
+export const CardlistLi = styled.li`
+    flex: 1;
+    transition: all 0.6s ease;
+`
+export const Cardall = styled.div`
+    position: relative;
+    width: 100%;
+    height: 100%;
+`
+export const CardBack = styled.div`
+    position: absolute;
+    left: 23px;
+    right: 23px;
+    top: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    width: 80%;
-    margin: 0 auto;
-    padding: 20px 0;
-    font-size: 12px;
-    span{
-        flex: 1;
-        text-align: center;
-        text-shadow: 0 2px 1px rgba(0, 0, 0, 0.2);
-        font-weight: 100;
-        font-size: 12px;
-        opacity: 0.7;
+    height: 500px;
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: #333;
+    background-position: center;
+    box-shadow: 0 22px 16px -12px rgba(0, 0, 0, 0.2);
+    filter: grayscale(0.4);
+    transition: all 0.6s ease;
+    will-change: transform, left, right;
+    ::before{
+        content: '';
+        position: absolute;
+        z-index: -1;
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(to bottom, rgba(99, 94, 86, 0.5), rgba(99, 94, 86, 0) 30%, rgba(64, 65, 66, 0) 70%, rgba(33, 34, 35, 0.9));
     }
+`
+export const Cardclick = styled.div`
+
 `

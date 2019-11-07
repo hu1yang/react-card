@@ -50,16 +50,24 @@ export const CardlistUl = styled.ul`
 export const CardlistLi = styled.li`
     flex: 1;
     transition: all 0.6s ease;
+    
 `
 export const Cardall = styled.div`
     position: relative;
     width: 100%;
     height: 100%;
+    .active{
+        transform: translate3d(0, -100px, 0);
+    }
+    .actives{
+        transform: scale(1);
+        opacity: 1;
+    }
 `
 export const CardBack = styled.div`
     position: absolute;
-    left: 23px;
-    right: 23px;
+    left: 18px;
+    right: 18px;
     top: 0;
     z-index: 2;
     display: flex;
@@ -84,6 +92,73 @@ export const CardBack = styled.div`
         background-image: linear-gradient(to bottom, rgba(99, 94, 86, 0.5), rgba(99, 94, 86, 0) 30%, rgba(64, 65, 66, 0) 70%, rgba(33, 34, 35, 0.9));
     }
 `
+export const CardBackH2 = styled.h2`
+    padding: 30px 0;
+    text-align: center;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+    font-size: 18px;
+    opacity: 0.9;
+    color: white;
+`
+export const CardBackLocation = styled.div`
+    display:flex;
+    text-transform: uppercase;
+    span{
+        padding: 20px 0;
+        flex: 1;
+        text-align: center;
+        text-shadow: 0 2px 1px rgba(0, 0, 0, 0.2);
+        font-weight: 100;
+        font-size: 12px;
+        opacity: 0.7;
+        color: white;
+    }
+    .iconfont{
+        width: 20px;
+        flex: none;
+    }
+`
+
 export const Cardclick = styled.div`
+    position: relative;
+    padding-top: 250px;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 4px;
+    color: #999;
+    background-color: white;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    font-size: 12px;
+    transition: all 0.6s ease;
+    opacity: 0;
+    transform: scale(0.8);
+    
+`
+export const CardMap = styled.div`
+    height: 100px;
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+`
+export const CardHead = styled.div`
+    padding-top: 33px;
+    border-bottom: 1px solid #f9f9f9;
+    p{
+        padding: 6px 24px 0;
+        line-height: 16px;
+        transform: translate3d(0, 22px, 0);
+    }
+`
+export const CardStar = styled.div`
+    margin-left: 152px;
+    color: #c48cf5;
+    transform: translate3d(65%, 0, 0);
+    display: inline-block;
+    i{
+        margin: 0 1px;
+        line-height: 16px;
+    }
+`
+export const CardBody = styled.div`
 
 `

@@ -27,3 +27,6 @@ export const handclickF = () => ({
 export const handclickT = () => ({
     type: constants.CHANGE_HANDCLICKT,
 })
+export const handclickTT = () => ({
+    type: constants.CHANGE_HANDCLICKTT,
+})

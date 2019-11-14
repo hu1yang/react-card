@@ -42,6 +42,9 @@ export const Cardlist = styled.div`
     height: 496px;
     transform: scaleX(1);
     transition: all 0.6s ease;
+    &.card-list__selected{
+        transform: scaleX(1.1);
+    }
 `
 export const CardlistUl = styled.ul`
     display: flex;
@@ -62,6 +65,9 @@ export const Cardall = styled.div`
     .actives{
         transform: scale(1);
         opacity: 1;
+    }
+    &.card__selected{
+        visibility: hidden;
     }
 `
 export const CardBack = styled.div`

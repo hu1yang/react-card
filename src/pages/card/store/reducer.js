@@ -5,7 +5,8 @@ const defaultState = fromJS({
     cards:[],
     cout:4,
     coutPage:0,
-    Firstfloor:false
+    Firstfloor:false,
+    Secondfloor:false
 })
 
 export default ( state = defaultState , action) => {
@@ -19,9 +20,17 @@ export default ( state = defaultState , action) => {
         case constants.GET_CARDS:
             return state.set('cards', action.cards)
         case constants.CHANGE_HANDCLICKF:
-            return state.set('Firstfloor', false)
+            return state.merge({
+                Firstfloor: false,
+                Secondfloor: false
+            })
         case constants.CHANGE_HANDCLICKT:
-            return state.set('Firstfloor', true)
+                return state.merge({
+                    Firstfloor: true,
+                    Secondfloor: false
+                })
+        case constants.CHANGE_HANDCLICKTT:
+            return state.set('Secondfloor',true)
         default:
             return state;
     }

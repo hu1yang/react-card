@@ -5,7 +5,7 @@ import { fromJS } from 'immutable'
 
 const changecard = (result) => ({
     type: constants.GET_CARDS,
-    cards: fromJS(result.card)
+    cards: fromJS(result.data)
 })
 
 
@@ -15,10 +15,12 @@ export const changeEvents = (num) => ({
 })
 export const getCards = () => {
     return (dispatch) => {
-        axios.get('/api/card.json').then((res) => {
-            const result = res.data.data
+        axios.get('http://localhost:3333/getList').then((res) => {
+            console.log(res.data.data)
+            const result = res.data
             dispatch(changecard(result))
         })
+        
     }
 }
 export const handclickF = () => ({

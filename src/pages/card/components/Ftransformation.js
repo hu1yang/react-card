@@ -61,7 +61,7 @@ class Ftransformation extends PureComponent {
                                 <Cardall className={Secondfloor ? 'card__selected' : ''}>
                                     <CardBack 
                                     className={(Firstfloor && index === coutPage) ? 'card_back active' :'card_back'} 
-                                    style={{backgroundSize: '100% 100%' ,backgroundImage: 'url(localhost:3333/'+ item.get('backimg') +')' }} 
+                                    style={{backgroundSize: '100% 100%' ,backgroundImage: 'url(http://localhost:3333/upload/'+ item.get('backimg') +')' }} 
                                     onTouchEnd={() => handclick(Firstfloor , index , coutPage)}
                                     >
                                         <CardBackH2>{item.get('title')}</CardBackH2>

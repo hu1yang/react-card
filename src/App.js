@@ -5,10 +5,11 @@ import { Provider } from 'react-redux'
 import { GlobalfontStyle } from './static/iconfont/iconfont'
 import store from './store'
 import Card from './pages/card'
+import { hidden } from '_ansi-colors@3.2.4@ansi-colors';
 
 function App() {
   return (
-    <Fragment>
+    <div style={{overflow:'hidden',height:'100%'}}>
       <GlobalStyle />
       <GlobalfontStyle />
       <Provider store={store}>
@@ -18,7 +19,7 @@ function App() {
           </Fragment>
         </BrowserRouter>
       </Provider>
-    </Fragment>
+    </div>
   );
 }
 

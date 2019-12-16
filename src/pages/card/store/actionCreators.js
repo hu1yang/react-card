@@ -16,11 +16,10 @@ export const changeEvents = (num) => ({
 export const getCards = () => {
     return (dispatch) => {
         axios.get('http://localhost:3333/getList').then((res) => {
-            console.log(res.data.data)
             const result = res.data
+            // console.log(result.data[0].id)
             dispatch(changecard(result))
         })
-        
     }
 }
 export const handclickF = () => ({

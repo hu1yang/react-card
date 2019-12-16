@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+
 export const CardBox = styled.div`
     width:100%;
     height:100%;
@@ -8,10 +9,13 @@ export const CardBox = styled.div`
     opacity: 0.7;
 `
 export const CardTop = styled.div`
+    z-index: 20;
     display:flex;
     flex-flow:  row nowrap;
     justify-content: space-between;
     padding: 5% 5%;
+    position: relative;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 `
 export const CardTops = styled.div`
     color: #eef5fa;
@@ -167,4 +171,164 @@ export const CardStar = styled.div`
 `
 export const CardBody = styled.div`
 
+`
+
+
+
+
+export const Fulldetail = styled.div`
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 812px;
+    &.card-detail{
+        position: fixed;
+        z-index: 10;
+        will-change: top, left, width, height;
+    }
+    .card_menu{
+        padding: 0 20px;
+    }
+`
+
+export const Fullheight = styled.div`
+    position: relative;
+    width: 100%;
+    height: 100%;
+`
+export const Fullfornt = styled.div`
+    position: absolute;
+    left: 16px;
+    right: 16px;
+    top: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 450px;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: #333;
+    background-position: center;
+    box-shadow: 0 22px 16px -12px rgba(0, 0, 0, 0.2);
+    filter: grayscale(0.4);
+    transition: all 0.6s ease;
+    will-change: transform, left, right;
+    ::before{
+        content: '';
+        position: absolute;
+        z-index: -1;
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(to bottom, rgba(99, 94, 86, 0.5), rgba(99, 94, 86, 0) 30%, rgba(64, 65, 66, 0) 70%, rgba(33, 34, 35, 0.9));
+    }
+    &.card_front{
+        left: 0;
+        right: 0;
+        border-radius: 0;
+        box-shadow: none;
+        transform: translate3d(0, -120px, 0);
+    }
+`
+
+
+
+export const Fullback = styled.div`
+    position: relative;
+    padding-top: 250px;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 4px;
+    color: #999;
+    background-color: white;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    font-size: 12px;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.6s ease;
+    .card__active &.card_back{
+        transform: scale(1);
+        opacity: 1;
+    }
+    .card-detail &.card_back{
+        box-shadow: none;
+        border-radius: 0;
+    }
+`
+export const Fullmap = styled.div`
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+    .card-detail &.card_map{
+        opacity: 1;
+        transform: translate3d(0, 80px, 0);
+    }
+`
+export const Fullhead = styled.div`
+    padding-bottom: 8px;
+    border-bottom: 1px solid #f9f9f9;
+    .card-detail &.card_head{
+        padding: 0 30px 8px;
+    }
+    p{
+        padding: 6px 24px 0;
+        line-height: 16px;
+        transform: translate3d(0, 22px, 0);
+    }
+    .card-detail , .card_address{
+        transform: translate3d(0, 0, 0);
+    }
+`
+export const Fullbody = styled.div`
+    .post-list{
+        padding: 0;
+        transform-origin: top;
+    }
+    .post{
+        padding: 16px 0;
+        border-bottom: 1px solid #f9f9f9;
+    }
+    .post_avatar{
+        padding: 0 24px;
+        display: flex;
+        align-items: center;
+    }
+    .post_face{
+        display: block;
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+        background-size: cover;
+        background-position: 0px 2px;
+    }
+    .post_name {
+        color: #888;
+    }
+    .post_content{
+        padding: 8px 24px 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+    .post_date, .post_like {
+        color: #ccc;
+    }
+    .post_name, .post_date {
+        flex: 1;
+        padding-left: 20px;
+    }
+    .card_back ,.post-list{
+        transform: scale3d(1, 0, 1);
+        opacity: 0;
+    }
+    .card-detail ,.post-list{
+        transform: scale3d(1, 1, 1);
+        opacity: 1; 
+    }
+    .card_back,.post{
+        padding: 16px 30px;
+    }
 `

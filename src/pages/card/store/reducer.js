@@ -2,6 +2,7 @@ import * as constants from './constants'
 import { fromJS }from 'immutable'
 
 const defaultState = fromJS({
+    servers: 'http://localhost:3333',
     cards:[],
     cout:4,
     coutPage:0,

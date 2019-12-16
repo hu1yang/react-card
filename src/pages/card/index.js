@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { CardBox , CardTop , CardTops , CardMenu , CardMenuL } from './style';
 import {actionCreators} from './store';
 import Ftransformation from './components/Ftransformation'
-
+import Fullscreen from './components/Fullscreen'
 
 
 
@@ -12,7 +12,7 @@ class Card extends PureComponent {
     render() {
         return (
             <CardBox>
-                <CardTop>
+                {/* <CardTop>
                     <CardTops><i className='iconfont'>&#xe601;</i></CardTops>
                     <CardTops>Card map</CardTops>
                     <CardTops><i className='iconfont'>&#xe637;</i></CardTops>
@@ -22,7 +22,8 @@ class Card extends PureComponent {
                     <CardMenuL className='active'>Scenery</CardMenuL>
                     <CardMenuL>Delicious</CardMenuL>
                 </CardMenu >
-                <Ftransformation />
+                <Ftransformation /> */}
+                <Fullscreen />
             </CardBox>
         )
     }

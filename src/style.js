@@ -26,6 +26,9 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+html,body{
+	height: 100%;
+}
 body {
 	line-height: 1;
 }
@@ -50,6 +53,10 @@ a{
 .container{
 	width: 1190px;
 	margin: 0 auto;
+}
+#root{
+	height: 100%;
+	overflow: hidden;
 }
 *:focus { outline: none; }
 `;

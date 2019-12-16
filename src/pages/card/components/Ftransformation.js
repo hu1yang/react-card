@@ -51,7 +51,7 @@ class Ftransformation extends PureComponent {
         
     }
     render() {
-        const { coutPage , Firstfloor , cards , handclick , handclickT , Secondfloor} = this.props
+        const {servers , coutPage , Firstfloor , cards , handclick , handclickT , Secondfloor} = this.props
         return (
             <Cardlist className={Secondfloor ? 'card-list__selected' : ''} onTouchStart={this.changeEventsS.bind(this)} onTouchEnd={this.changeEventsE.bind(this)}>
                 <CardlistUl style={{width:'400%'}} id='showul'>
@@ -61,7 +61,7 @@ class Ftransformation extends PureComponent {
                                 <Cardall className={Secondfloor ? 'card__selected' : ''}>
                                     <CardBack 
                                     className={(Firstfloor && index === coutPage) ? 'card_back active' :'card_back'} 
-                                    style={{backgroundSize: '100% 100%' ,backgroundImage: 'url(http://localhost:3333/upload/'+ item.get('backimg') +')' }} 
+                                    style={{backgroundSize: '100% 100%' ,backgroundImage: 'url('+servers+'/upload/'+ item.get('backimg') +')' }} 
                                     onTouchEnd={() => handclick(Firstfloor , index , coutPage)}
                                     >
                                         <CardBackH2>{item.get('title')}</CardBackH2>
@@ -74,8 +74,8 @@ class Ftransformation extends PureComponent {
                                     <Cardclick onTouchEnd={() => handclickT()} className={(Firstfloor && index === coutPage) ? 'actives' :'live'}>
                                         <CardMap style={{backgroundSize: 'cover' ,backgroundImage: 'url('+ backmap +')'}}></CardMap>
                                         <CardHead>
-                                            <p>{item.get('idea')}</p>
-                                            <p>{item.get('number')}</p>
+                                            <p>{item.get('date')}</p>
+                                            <p>{item.get('Detailed_address')}</p>
                                             <CardStar>
                                                 <i className='iconfont'>&#xe617;</i>
                                                 <i className='iconfont'>&#xe617;</i>
@@ -100,6 +100,7 @@ class Ftransformation extends PureComponent {
 
 const mapStateToProps = (state) => {
     return {
+        servers: state.getIn(['card','servers']),
         cards: state.getIn(['card','cards']),
         cout: state.getIn(['card','cout']),
         coutPage: state.getIn(['card','coutPage']),
